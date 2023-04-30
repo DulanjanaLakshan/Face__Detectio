@@ -1,7 +1,5 @@
-# import opencv lib
 import cv2
-# this is used by genarate random number
-from random import randrange
+
 
 # lode the pre-trained data on face frontals form opencv
 trained_face_data=cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
@@ -16,7 +14,7 @@ gray__image=cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 # Detect Face
 face_coordinates=trained_face_data.detectMultiScale(gray__image)
 for (x,y,w,h) in face_coordinates:
-    cv2.rectangle(image, (x, y), (x+w, y+h), (randrange(256),randrange(256),randrange(256)),2)
+    cv2.rectangle(image, (x, y), (x+w, y+h), (0,255,0),2)
 
 # print(face_coordinates)
 
